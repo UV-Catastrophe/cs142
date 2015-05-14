@@ -1,0 +1,36 @@
+
+<% if @user.errors.any? %>
+	<div class="sub-container error-container">
+		<% for message_error in @user.errors.full_messages %>
+			<p><%= message_error %></p>
+		<% end %>
+	</div>
+<% end %>
+
+<div class="sub-container form-container">
+	<%= form_for @user, url: {action: 'create'} do |f| %>
+		<div class="form-row">
+			<div class="form-field">First Name:</div>
+			<div class="form-field"><%= f.text_field :first_name%></div>
+		</div>
+		<div class="form-row">
+			<div class="form-field">Last Name:</div>
+			<div class="form-field"><%= f.text_field :last_name%></div>
+		</div>
+		<div class="form-row">
+			<div class="form-field">Login (username):</div>
+			<div class="form-field"><%= f.text_field :login %></div>
+		</div>
+		<div class="form-row">
+			<div class="form-field">Password:</div>
+			<div class="form-field"><%= f.password_field :password %></div>
+		</div>
+		<div class="form-row">
+			<div class="form-field">Confirm Password:</div>
+			<div class="form-field"><%= f.password_field :password_confirmation %></div>
+		</div>
+		<div class="form-row">
+			<div class="form-field"><%= f.submit %></div>
+		</div>
+	<% end %>
+</div>

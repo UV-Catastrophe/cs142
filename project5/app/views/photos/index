@@ -1,0 +1,8 @@
+<p>
+<ul>
+<% @photos.each do |photo| %>
+  <li><%= photo.user_id %> <%= photo.file_name %><%= photo.created_at %></li>
+<% end %>
+
+</ul>
+</p>

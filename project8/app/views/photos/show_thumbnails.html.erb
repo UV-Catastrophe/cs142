@@ -1,0 +1,9 @@
+<% if @searchStr.empty? %>
+	Enter a phrase to search photos
+<% elsif @photos.empty? %>
+	No results found
+<% else %>
+	<% @photos.each do |photo| %>
+	  <%= render partial: "shared/thumbnail", locals: {photo: photo} %>
+	<% end %>
+<% end %>

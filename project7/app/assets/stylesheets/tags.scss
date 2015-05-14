@@ -1,0 +1,57 @@
+.tag-container {
+	position: relative;
+}
+
+.new-tag-form {
+	position: absolute;
+	visibility: hidden;
+	background: #FFF9E9;
+	padding: 5px;
+	top: 0px;
+	left: 0px;
+	border: solid black 1px;
+	width: 250px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.tag-create {
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	top: 0px;
+	left: 0px;
+	border: solid white 2px;
+	background-color: #555;
+	opacity: 0.2;
+	visibility: hidden;
+}
+
+.tag-display {
+	position: absolute;
+}
+
+.tag-display-selected {
+  	position: absolute;
+	border: solid #555 2px;
+	background-color: white;
+	opacity: 0.2;
+}
+
+.tag-display-label {
+	position: absolute;
+	border: solid black 1px;
+	background: #FFF9E9;
+	padding: 5px;
+}
+
+.tagged-user {
+	display: inline-block;
+	background-color: #b0abb3;
+	border: solid #556 1px;
+	margin: 2px;
+	padding: 4px;
+	font-size: 8pt;
+}

@@ -1,0 +1,6 @@
+<div class='link-bar'>
+	<%= link_to 'Home', controller: 'users'%>
+</div>
+<% @photos.order("date_time DESC").each do |photo| %>
+  <%= render partial: "shared/photo", locals: {photo: photo} %>
+<% end %>

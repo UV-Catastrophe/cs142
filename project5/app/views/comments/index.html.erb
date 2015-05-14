@@ -1,0 +1,8 @@
+<p>
+<ul>
+<% @comments.each do |comment| %>
+  <li><%= comment.comment %> <%= comment.date_time %></li>
+<% end %>
+
+</ul>
+</p>

@@ -1,0 +1,12 @@
+<div class='sub-container form-container'>
+	<%= form_tag({action: :create}, multipart: true) do %>
+		<div class='form-row'>
+			<div class='form-field'>
+				<%= file_field_tag(:photo) %>
+			</div>
+			<div class='form-field'>
+				<%= submit_tag("submit") %>
+			</div>
+		</div>
+	<% end %>
+</div>

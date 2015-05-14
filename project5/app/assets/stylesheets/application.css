@@ -1,0 +1,150 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+	background-color: #b0abb3;
+}
+
+#main {
+	margin-top: 50px;
+	margin-left: auto;
+    margin-right: auto;
+	width: 1000px;
+	border: 2px solid #555566;
+	color: #555566;
+	font-family: "Tahoma";
+	font-size: 13pt;
+}
+
+#main ul {
+	list-style-type: none;
+}
+
+#header-text {
+	font-size: 25pt;
+	padding: 40px 30px;
+	width: 200px;
+}
+
+#login-bar {
+	height: 50px;
+	background-color: #FFF9E9;
+}
+
+#login-panel {
+	font-size: 8pt;
+	float: right;
+	width: 120px;
+	height: 100%;
+	padding: 10px;
+}
+
+#home-panel {
+	font-size: 12pt;
+	float: left;
+	width: 75px;
+	padding: 15px 25px;
+	height: 100%;
+}
+
+#my-page-panel {
+	font-size: 12pt;
+	float: left;
+	width: 75px;
+	padding: 15px 25px;
+	height: 100%;
+}
+
+#header-bar {
+	height: 300px;
+	background-image: Url('/assets/header.jpg');
+	border-bottom: 4px solid #555566;
+	border-top: 4px solid #555566;
+}
+
+#display-box {
+	padding: 25px;
+	background-color: #FFF9E9;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+	color: #AA0099;
+}
+
+.sub-container {
+	width: 800px;
+	background-color: #FFFBF8;
+	padding: 20px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px solid #555566;
+}
+
+.error-container {
+	font-size: 10pt;
+	color: red;
+}
+
+.form-row {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.form-field {
+	display: inline-block;
+	text-align: left;
+	margin: 0px 20px;
+	width: 200px;
+}
+
+.form-field input {
+	width: 160px;
+}
+
+.field_with_errors input{
+	color: red;
+	font-weight: bold;
+}
+
+#error-row {
+	color: red;
+	font-size: 10pt;
+	margin-bottom: 20px;
+}
+
+#notice-row {
+	font-size: 12pt;
+	margin-bottom: 20px;
+}
+
+.comment-area {
+	width: 550px;
+	display: inline-block;
+	margin: 0px 20px;
+
+}
+
+.comment-area textarea {
+	width: 500px;
+	height: 50px;
+}

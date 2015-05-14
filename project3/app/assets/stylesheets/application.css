@@ -1,0 +1,131 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+	background-color: #b0abb3;
+}
+
+#main {
+	margin-top: 50px;
+	margin-left: auto;
+    margin-right: auto;
+	width: 1000px;
+	border: 2px solid #555566;
+	color: #555566;
+	font-family: "Tahoma";
+	font-size: 13pt;
+}
+
+#main ul {
+	list-style-type: none;
+}
+
+#headerText {
+	font-size: 25pt;
+	padding: 40px 30px;
+}
+
+#headerBar {
+	height: 300px;
+	background-image: Url('/assets/header.jpg');
+	border-bottom: 4px solid #555566
+}
+
+#displayBox {
+	padding: 25px;
+	background-color: #FFF9E9;
+	text-align: center;
+}
+
+#tabs {
+	font-family: "Tahoma";
+	font-size: 13pt;
+	list-style: none;
+	padding:0;
+	margin:10px 10px 0 10px;
+}
+
+.tab {
+	float: left;
+	margin: 0 5px 0 0;
+	height: 2em;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+.tab a {
+    background-image: Url("/assets/mid.gif");
+    color: #000;
+    float: left;
+    line-height: 2em; /* ~double height of text */
+    height: 2em;
+    padding: 0px 10px;
+    text-decoration: none;
+}
+
+.tab a:hover {
+	color: #cc6600;
+}
+
+.tab-left {
+	float: left;
+	width: 3px; /* Width of left.gif */
+	height: 2em; 
+	background-image: Url("/assets/left.gif");
+}
+
+.tab-right {
+	float: left;
+	width: 3px;
+	height: 2em;
+	background-image: Url("/assets/right.gif");
+}
+
+/* #selected corresponds to tab that is selected (would change on click if we were using JS)*/
+#selected a {
+	background-image: Url("/assets/mid-selected.gif");
+	padding-bottom: 1px; /* Make tab overlap 1 pixel below to hide outline */
+	background-color: #fff; /* Ensures that overlapping segment is white to blockout outline */
+}
+
+#selected .tab-left {
+	background-image: Url("/assets/left-selected.gif");
+	background-color: #fff;
+	padding-bottom: 1px;
+}
+
+#selected .tab-right {
+	background-image: Url("/assets/right-selected.gif");
+	background-color: #fff;
+	padding-bottom: 1px;
+}
+
+#selected {
+	font-weight: bold;
+}
+
+#content {
+	clear: both; /* To send to next line below floated tabs */
+	border: 1pt solid #cccccc;
+	margin: 10px;
+	min-height: 200px;
+	background-color: white;
+	padding: 50px;
+}
+
+.tab-container {
+	margin: 20px;
+}

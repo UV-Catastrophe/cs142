@@ -1,0 +1,7 @@
+<p>
+<ul>
+<% @photos.each do |photo| %>
+  <%= render partial: "shared/thumbnail", locals: {photo: photo} %>
+<% end %>
+</ul>
+</p>

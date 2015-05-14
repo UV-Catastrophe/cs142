@@ -1,0 +1,31 @@
+.calendar-container {
+	display: inline-block;
+	padding: 30px;
+	height: 700px;
+}
+
+.calendar-table td {
+	width: 50px;
+	height: 40px;
+	padding: 5px;
+}
+
+.day-header th {
+	background-color: #ff9999;
+	text-align: center;
+	width: 50px;
+	height: 25px;
+	padding: 5px;
+}
+
+.month-title td {
+	text-align: center;
+}
+
+td.bright {
+	background-color: #9c1;
+}
+
+td.faded {
+	background-color: #aaa;
+}

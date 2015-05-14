@@ -1,0 +1,4 @@
+
+<% @users.each do |user| %>
+	<div><%= render partial: 'shared/userLink', locals: {user: user} %></div>
+<% end %>

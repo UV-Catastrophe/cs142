@@ -1,0 +1,11 @@
+<% @tags.each do |tag| %>
+	<ul>
+		<li>id: <%= tag.id %></li>
+		<li>photo_id: <%= tag.photo.id %></li>
+		<li>user_id: <%= tag.user.id %></li>
+		<li>top_px: <%= tag.top_px %></li>
+		<li>left_px: <%= tag.left_px %></li>
+		<li>width_px: <%= tag.width_px %></li>
+		<li>height_px: <%= tag.height_px %></li>
+	</ul>
+<% end %>

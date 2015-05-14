@@ -1,0 +1,26 @@
+<div class='sub-container form-container'>
+	<%= form_tag("/users/post_login") do %>
+		<div class='form-row'>
+			<div class='form-field'>
+				<%= label_tag(:login, "username: ") %>
+			</div>
+			<div class='form-field'>
+				<%= text_field_tag(:login) %>
+			</div>
+		</div>
+		<div class='form-row'>
+			<div class='form-field'>
+				<%= label_tag(:password, "password: ") %>
+			</div>
+			<div class='form-field'>
+				<%= password_field_tag(:password) %>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-field"><%= submit_tag("Login") %></div>
+		</div>
+		<div>
+			<br />Don't have a username? <%= link_to 'Register here', controller: 'users', action: 'new' %>
+		</div>
+	<% end %>
+</div>

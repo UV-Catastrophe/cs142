@@ -1,0 +1,12 @@
+<div class="new-tag-form" id="new-tag-<%= photo_id %>">
+	<%= form_tag("/tags/create") do %>
+		<% options = User.all.map { |user| [user.first_name + ' ' + user.last_name, user.id]} %>
+		<%= select_tag(:tagged_user_id, options_for_select(options)) %>
+		<%= hidden_field_tag :photo_id, photo_id %>
+		<%= hidden_field_tag :left_px, 40 %>
+		<%= hidden_field_tag :top_px, 50 %>
+		<%= hidden_field_tag :width_px, 60 %>
+		<%= hidden_field_tag :height_px, 70 %>
+		<%= submit_tag("Tag User") %>
+	<% end %>
+</div>

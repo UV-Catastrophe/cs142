@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Project7</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag('Tagger') %>
+  <%= javascript_include_tag('PhotoPreview') %>
+</head>
+<body>
+<div id="main">
+	<div id="login-bar">
+		<div id="home-panel">
+			<%= link_to 'Home', controller: 'users', action: 'index' %>
+		</div>
+		
+		<% if !session[:login_id].nil? %>
+			<div id="my-page-panel">
+				<%= link_to 'My Page', controller: 'photos', action: 'show', user_id: session[:login_id] %>
+			</div>
+		<% end %>
+		
+		<div id="login-panel">
+			<% if !session[:login_id].nil? %>
+				Hi <%= User.find(session[:login_id]).first_name %>!<br />
+				<%= link_to 'logout', controller: 'users', action: 'logout' %>
+			<% else %>
+				you are not logged in<br />
+				<%= link_to 'login', controller: 'users', action: 'login' %>
+				|
+				<%= link_to 'register', controller: 'users', action: 'new' %>
+			<% end %>
+		</div>
+	</div>
+	<div id="header-bar">
+		<div id="header-text"><%= @title %></div>
+	</div>
+
+	<div id="display-box">
+		<% if !flash[:notice].nil? %>
+			<div id="notice-row">
+				<%= flash[:notice] %>
+			</div>
+		<% end %>
+		<% if !flash[:error].nil? %>
+			<div id="error-row">
+				[ERROR]: <%= flash[:error] %>
+			</div>
+		<% end %>
+		<%= yield %>
+	</div>
+</div>
+</body>
+</html>

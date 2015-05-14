@@ -1,0 +1,17 @@
+<div class="sub-container">
+	<%= image_tag photo.file_name, :class => 'img-container' %>
+	<div class="photo-date">
+		Uploaded on <%= photo.date_time.to_time.strftime('%b %e, %Y') %>
+	</div>
+	<% photo.comments.order('date_time').each do |comment| %>
+		<%= render partial: 'shared/comment', locals: {comment: comment} %>
+	<% end %>
+	<% if session[:login_id].nil? %>
+		<div>
+			You must login to leave a comment:
+			<%= link_to 'login', controller: 'users', action: 'login' %>
+		</div>
+	<% else %>
+		<%= render partial: 'shared/newComment', locals: {photo_id: photo.id, user_id: photo.user.id} %>
+	<% end %>
+</div>

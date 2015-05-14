@@ -1,0 +1,16 @@
+<div class='comment-container'>
+	<div class='comment-header'>
+		<div class='comment-author'>
+			<%= render partial: 'shared/userLink', locals: {user: comment.user} %>
+		</div>
+		<div class='comment-date'>
+			<% comment_time = comment.date_time.to_time %>
+			<%= comment_time.strftime('%A, %b %e, %Y') %>
+			<br>
+			<%= comment_time.strftime('%l:%M %P') %>
+		</div>
+	</div>
+	<div class='comment-content'>
+		<%= comment.comment %>
+	</div>
+</div>

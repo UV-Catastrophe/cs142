@@ -1,0 +1,46 @@
+<div class="sub-container">
+	<div>
+		<div class="photo-container" id="photo-<%= photo.id %>">
+			<%= image_tag photo.file_name, :class => 'img-container' %>
+			<div class="photo-date">
+				Uploaded on <%= photo.date_time.to_time.strftime('%b %e, %Y') %>
+			</div>
+			<%= render partial: 'shared/newTag', locals: {photo_id: photo.id} %>
+		</div>
+		<div class="tag-container">
+			<% photo.tags.each do |tag| %>
+				<div class="tagged-user" id="tagged-user-<%= tag.id %>">
+					<%= tag.user.first_name %> <%= tag.user.last_name %>
+					<%= link_to " X", controller: "tags", action: "delete", tag_id: tag %>
+				</div>
+			<% end %>
+			
+		</div>
+	</div>
+
+	<% photo.comments.order('date_time').each do |comment| %>
+		<%= render partial: 'shared/comment', locals: {comment: comment} %>
+	<% end %>
+	<% if session[:login_id].nil? %>
+		<div>
+			You must login to leave a comment:
+			<%= link_to 'login', controller: 'users', action: 'login' %>
+		</div>
+	<% else %>
+		<%= render partial: 'shared/newComment', locals: {photo_id: photo.id, user_id: photo.user.id} %>
+	<% end %>
+	<script>
+		<% photo.tags.each do |tag| %>
+			new TagDisplay(
+				'photo-<%= photo.id %>',
+				<%= tag.top_px %>,
+				<%= tag.left_px %>,
+				<%= tag.height_px %>,
+				<%= tag.width_px %>,
+				'<%= tag.user.first_name %> <%= tag.user.last_name %>',
+				'tagged-user-<%= tag.id %>'
+			)
+		<% end %>
+		setupTagCreation("photo-<%= photo.id %>", "new-tag-<%= photo.id %>")
+	</script>
+</div>

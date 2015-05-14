@@ -1,0 +1,12 @@
+
+<ul id="tabs">
+	<% tab_contents.each do |tab_content| %>
+		<li class="tab">
+			<div class="tab-left"></div>
+			<a href=<%= tab_content[:url] %><% if tab_content[:label] == selected_tab %> id="selected"<%end%>><%= tab_content[:label] %></a>
+			<div class="tab-right"></div>
+		</li>
+	<% end %>
+</ul>
+
+<div id="content"><%= selected_tab %></div>

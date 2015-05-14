@@ -1,0 +1,7 @@
+
+<% @users.each do |user| %>
+	<div><%= render partial: 'shared/userLink', locals: {user: user} %></div>
+<% end %>
+<input type="text" id="thumbnail-search" />
+<div id='thumbnail-results'></div>
+<script>new PhotoPreview('thumbnail-search', 'thumbnail-results')</script>

@@ -1,0 +1,9 @@
+<div class="photo-container">
+	<%= image_tag photo.file_name, :class => 'img-container' %>
+	<div class="photo-date">
+		Uploaded on <%= photo.date_time.to_time.strftime('%b %e, %Y') %>
+	</div>
+	<% photo.comments.order('date_time').each do |comment| %>
+		<%= render partial: 'shared/comment', locals: {comment: comment} %>
+	<% end %>
+</div>

@@ -1,0 +1,19 @@
+<div id="new-comment-container">
+	<%= form_tag("/comments/create") do %>
+		<div class="form-row">
+			<div class="comment-area">
+				<%= text_area_tag(:comment) %>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-field">
+				Add a comment:
+			</div>
+				<%= hidden_field_tag :photo_id, photo_id %>
+				<%= hidden_field_tag :user_id, user_id %>
+			<div class="form-field">
+				<%= submit_tag("submit") %>
+			</div>
+		</div>
+	<% end %>
+</div>

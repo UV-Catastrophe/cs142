@@ -1,0 +1,6 @@
+<% if @admin %>
+	<%= link_to "Upload Photo", controller: "photos", action: "new" %>
+<% end %>
+<% @photos.order("date_time DESC").each do |photo| %>
+	<%= render partial: "shared/photo", locals: {photo: photo} %>
+<% end %>
